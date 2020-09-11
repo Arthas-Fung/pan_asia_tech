@@ -24,6 +24,18 @@ dependencies:
   flutter:
     sdk: flutter
 
+  http: ^0.12.0+4
+  dio: ^3.0.9
+  retrofit: any
+  logger: any
+
+  bloc: ^4.0.0
+  flutter_bloc: ^4.0.0
+  meta: ^1.1.8
+  equatable: ^1.1.1
+  rxdart: ^0.24.0
+
+  json_annotation: ^3.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -32,6 +44,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  retrofit_generator: any
+  build_runner: any
+  bloc_test: ^5.0.0
+  mockito: ^4.1.1
+
+  json_serializable: ^3.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,3 +93,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+dependency_overrides:
+  analyzer: '0.39.14'

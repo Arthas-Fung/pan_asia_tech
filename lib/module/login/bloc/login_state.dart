@@ -9,7 +9,9 @@ abstract class LoginState extends Equatable {
 
 class LoginUninitialized extends LoginState {}
 
-class LoginFail extends LoginState {}
+class LoginLoading extends LoginState {}
+
+class LoginFailure extends LoginState {}
 
 class LoginSuccess extends LoginState {
   final String token;

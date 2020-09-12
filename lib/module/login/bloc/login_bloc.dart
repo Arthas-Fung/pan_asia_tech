@@ -32,13 +32,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
+    if (event is Initial) {
+      yield LoginUninitialized();
+    }
     if (event is Login) {
       try {
+        yield LoginLoading();
         LoginRequest request = LoginRequest(email: event.email, password: event.password);
         LoginResponse response = await _repo.login(request);
         yield LoginSuccess(token: response.token);
       } catch (_) {
-        yield LoginFail();
+        yield LoginFailure();
       }
     }
   }

@@ -33,19 +33,21 @@ class _LoginRouteState extends State<LoginRoute> {
               builder: (context) {
                 return AlertDialog(
                     content: Container(
-                        height: 70,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            CircularProgressIndicator(),
-                            SizedBox(height: 10),
-                            Text("loading")
-                          ],
-                        ),
+                      height: 70,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          CircularProgressIndicator(),
+                          SizedBox(height: 10),
+                          Text("loading")
+                        ],
+                      ),
                     )
                 );
               }
           );
+        } else if (state is PasswordIconUpdate) {
+
         } else {
           Navigator.of(context).pop();
         }
@@ -77,7 +79,10 @@ class _LoginRouteState extends State<LoginRoute> {
       },
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
-          return LoginFormRoute(isFailure: false);
+          if (state is PasswordIconUpdate) {
+            return LoginFormRoute(isHidden: state.isHidden);
+          }
+          return LoginFormRoute(isHidden: true);
         },
       ),
     );

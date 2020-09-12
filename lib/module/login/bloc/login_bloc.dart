@@ -13,6 +13,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   final LoginRepo _repo;
 
+  bool isHidden = true;
+
   LoginBloc({@required LoginRepo repo})
       : assert(repo != null),
         _repo = repo;
@@ -32,6 +34,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
+    if (event is PasswordIconClick) {
+      isHidden = !isHidden;
+      yield PasswordIconUpdate(isHidden: isHidden);
+    }
     if (event is Initial) {
       yield LoginUninitialized();
     }

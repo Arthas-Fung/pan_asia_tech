@@ -7,6 +7,18 @@ abstract class LoginState extends Equatable {
   List<Object> get props => [];
 }
 
+class PasswordIconUpdate extends LoginState {
+  final bool isHidden;
+
+  const PasswordIconUpdate({
+    this.isHidden,
+  });
+
+  @override
+  List<Object> get props => [isHidden];
+
+}
+
 class LoginUninitialized extends LoginState {}
 
 class LoginLoading extends LoginState {}

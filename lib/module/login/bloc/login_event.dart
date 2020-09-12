@@ -9,6 +9,11 @@ class Initial extends LoginEvent {
   List<Object> get props => [];
 }
 
+class PasswordIconClick extends LoginEvent {
+  @override
+  List<Object> get props => [];
+}
+
 class Login extends LoginEvent {
   final String email;
   final String password;

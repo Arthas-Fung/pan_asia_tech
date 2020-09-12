@@ -14,10 +14,12 @@ class BottomTabItem extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          IconButton(icon: Image(
-            image: AssetImage(icon),
-            width: 30,
-            height: 30,)
+          IconButton(
+              icon: Image(
+                image: AssetImage(icon),
+                width: 25,
+                height: 25,
+              )
           ),
           Text(text,
               style: TextStyle(

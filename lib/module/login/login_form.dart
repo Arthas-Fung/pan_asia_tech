@@ -16,6 +16,8 @@ class _LoginRouteState extends State<LoginFormRoute> {
   LoginBloc _loginBloc;
 
   bool _isHidden = true;
+//  final _emailController = TextEditingController();
+//  final _passwordController = TextEditingController();
   final _emailController = TextEditingController(text: "eve.holt@reqres.in");
   final _passwordController = TextEditingController(text: "cityslicka");
 
@@ -71,7 +73,7 @@ class _LoginRouteState extends State<LoginFormRoute> {
                       TextField(
                         controller: _emailController,
                         decoration: InputDecoration(
-                            hintText: 'Email',
+                          hintText: 'Email',
                         ),
                       ),
                       SizedBox(height: 10),

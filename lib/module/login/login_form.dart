@@ -27,7 +27,6 @@ class _LoginRouteState extends State<LoginFormRoute> {
 
   login() {
     _loginBloc.add(Login(_emailController.text, _passwordController.text));
-//    _loginBloc.add(Login("eve.holt@reqres.in", "cityslicka"));
   }
 
   @override

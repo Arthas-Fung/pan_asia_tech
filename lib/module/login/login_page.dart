@@ -38,6 +38,7 @@ class _LoginRouteState extends State<LoginRoute> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             CircularProgressIndicator(),
+                            SizedBox(height: 10),
                             Text("loading")
                           ],
                         ),
